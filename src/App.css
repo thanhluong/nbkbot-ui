@@ -11,8 +11,8 @@
 }
 
 .sidemenu {
-  width: 240px;
-  padding: 10px;
+  width: 12rem;
+  padding: 1rem;
   background-color: #202123;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .chat-input-holder {
-  padding: 24px;
+  padding: 2rem;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -44,10 +44,10 @@
 .chat-input-textarea {
   background-color: #40414f;
   width: 90%;
-  padding: 12px;
-  border-radius: 5px;
+  padding: 1.5rem;
+  border-radius: 1rem;
   border: none;
-  margin: 12px;
+  margin: 2rem;
   outline: none;
   font-size: 1.25em;
   color: white;
@@ -55,7 +55,7 @@
 }
 
 .chat-log {
-  padding: 24px;
+  padding: 1.5em;
   text-align: left;
 }
 
@@ -68,26 +68,31 @@
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  padding: 12px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 1.25em;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
 }
 
 .avatar {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 .avatar.chatgpt {
   background: #0da37f !important;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 .message {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.user_avatar {
+  width: 2.55em;
+  height: 2.55em;
 }

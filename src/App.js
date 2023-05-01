@@ -85,8 +85,7 @@ const ChatMessage = ({ message }) => {
         <div className={`avatar ${message.user === "gpt" && "chatgpt"}`}>
           {message.user === "gpt" ? (
             <img
-              width={41}
-              height={41}
+              class="user_avatar"
               src="https://icons.iconarchive.com/icons/google/noto-emoji-travel-places/128/42496-school-icon.png"
             />
           ) : (
@@ -104,8 +103,7 @@ const ChatMessage = ({ message }) => {
             //   />
             // </svg>
             <img
-              width={41}
-              height={41}
+              class="user_avatar"
               src="https://icons.iconarchive.com/icons/graphicloads/100-flat/128/student-icon.png"
             />
           )}
