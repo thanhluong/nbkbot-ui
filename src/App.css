@@ -31,7 +31,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(1em + 2vmin);
   color: white;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .chat-message-center {
-  max-width: 640px;
+  /* max-width: 640px; */
   margin-left: auto;
   margin-right: auto;
   display: flex;
