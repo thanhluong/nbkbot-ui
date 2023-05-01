@@ -10,11 +10,15 @@
   left: 0;
 }
 
-@media screen and (min-width: 600px) {
+.sidemenu {
+  width: 12em;
+  padding: 1rem;
+  background-color: #202123;
+}
+
+@media screen and (max-width: 600px) {
   .sidemenu {
-    width: 12em;
-    padding: 1rem;
-    background-color: #202123;
+    width: 0 !important;
   }
 }
 
