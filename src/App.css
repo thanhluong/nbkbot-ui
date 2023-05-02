@@ -64,6 +64,7 @@
 .chat-log {
   padding: 1.5em;
   text-align: left;
+  overflow: auto;
 }
 
 .chat-message.chatgpt {
