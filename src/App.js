@@ -1,7 +1,9 @@
-import "./App.css";
+// import "./App.css";
 import * as React from "react";
 import Button from "@mui/material/Button";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBroom, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 
 const ANSWERING_ENDPOINT = process.env.REACT_APP_API_URL + "answer/";
@@ -44,8 +46,8 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <aside className="sidemenu">
+    <div className="App bg-gray-800 text-white text-center absolute inset-0 flex">
+      <aside className="hidden sidemenu w-48 p-4 bg-gray-900 lg:block">
         <Button
           variant="outlined"
           size="large"
@@ -56,22 +58,38 @@ function App() {
           Xóa lịch sử
         </Button>
       </aside>
-      <section className="chatbox">
-        <div className="chat-log">
+      <section className="chatbox flex-1 bg-gray-800 relative">
+        <div className="chat-log p-6 text-left overflow-y-auto" style={{height: '80%'}}>
           {chatLog.map((message, index) => (
             <ChatMessage key={index} message={message} />
           ))}
         </div>
-        <div className="chat-input-holder">
-          <form onSubmit={handleSubmit}>
-            <input
-              rows="1"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              className="chat-input-textarea"
-              placeholder="Nhập vướng mắc của bạn"
-            ></input>
-          </form>
+
+        <div className="container-chat-input p-8 absolute bottom-0 right-0 left-0 flex items-center">
+          <div className="text-2xl" onClick={clearChat}>
+            <FontAwesomeIcon icon={faBroom} />
+          </div>
+
+          <div className="chat-input-holder flex-1">
+            <form onSubmit={handleSubmit}>
+              <input
+                rows="1"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                className="chat-input-textarea bg-gray-700 text-white p-6 rounded-lg border-none my-1 outline-none text-lg shadow-md"
+                style={{width:'95%'}}
+                placeholder="Nhập vướng mắc của bạn"
+              >
+              </input>
+
+              <button
+                type="submit"
+                className="absolute right-0 top-0 h-full w-16 text-center text-gray-400 flex items-center justify-center"
+              >
+                <FontAwesomeIcon icon={faArrowRight} className="text-gray-400" />
+              </button>
+            </form>
+          </div>
         </div>
       </section>
     </div>
@@ -80,35 +98,22 @@ function App() {
 
 const ChatMessage = ({ message }) => {
   return (
-    <div className={`chat-message ${message.user === "gpt" && "chatgpt"}`}>
-      <div className="chat-message-center">
-        <div className={`avatar ${message.user === "gpt" && "chatgpt"}`}>
+    <div className={`chat-message ${message.user === "gpt" && "chatgpt bg-white bg-opacity-10"}`}>
+      <div className="chat-message-center mx-auto flex p-5 px-5">
+        <div className={`avatar bg-opacity-50 rounded-full w-10 h-10 ${message.user === "gpt" && "chatgpt bg-green-600"}`}>
           {message.user === "gpt" ? (
             <img
               className="user_avatar"
               src="https://icons.iconarchive.com/icons/google/noto-emoji-travel-places/128/42496-school-icon.png"
             />
           ) : (
-            // <svg
-            //   width={41}
-            //   height={41}
-            //   fill="none"
-            //   xmlns="http://www.w3.org/2000/svg"
-            //   strokeWidth={1.5}
-            //   className="h-6 w-6"
-            // >
-            //   <path
-            //     d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835A9.964 9.964 0 0 0 18.306.5a10.079 10.079 0 0 0-9.614 6.977 9.967 9.967 0 0 0-6.664 4.834 10.08 10.08 0 0 0 1.24 11.817 9.965 9.965 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 7.516 3.35 10.078 10.078 0 0 0 9.617-6.981 9.967 9.967 0 0 0 6.663-4.834 10.079 10.079 0 0 0-1.243-11.813ZM22.498 37.886a7.474 7.474 0 0 1-4.799-1.735c.061-.033.168-.091.237-.134l7.964-4.6a1.294 1.294 0 0 0 .655-1.134V19.054l3.366 1.944a.12.12 0 0 1 .066.092v9.299a7.505 7.505 0 0 1-7.49 7.496ZM6.392 31.006a7.471 7.471 0 0 1-.894-5.023c.06.036.162.099.237.141l7.964 4.6a1.297 1.297 0 0 0 1.308 0l9.724-5.614v3.888a.12.12 0 0 1-.048.103l-8.051 4.649a7.504 7.504 0 0 1-10.24-2.744ZM4.297 13.62A7.469 7.469 0 0 1 8.2 10.333c0 .068-.004.19-.004.274v9.201a1.294 1.294 0 0 0 .654 1.132l9.723 5.614-3.366 1.944a.12.12 0 0 1-.114.01L7.04 23.856a7.504 7.504 0 0 1-2.743-10.237Zm27.658 6.437-9.724-5.615 3.367-1.943a.121.121 0 0 1 .113-.01l8.052 4.648a7.498 7.498 0 0 1-1.158 13.528v-9.476a1.293 1.293 0 0 0-.65-1.132Zm3.35-5.043c-.059-.037-.162-.099-.236-.141l-7.965-4.6a1.298 1.298 0 0 0-1.308 0l-9.723 5.614v-3.888a.12.12 0 0 1 .048-.103l8.05-4.645a7.497 7.497 0 0 1 11.135 7.763Zm-21.063 6.929-3.367-1.944a.12.12 0 0 1-.065-.092v-9.299a7.497 7.497 0 0 1 12.293-5.756 6.94 6.94 0 0 0-.236.134l-7.965 4.6a1.294 1.294 0 0 0-.654 1.132l-.006 11.225Zm1.829-3.943 4.33-2.501 4.332 2.5v5l-4.331 2.5-4.331-2.5V18Z"
-            //     fill="currentColor"
-            //   />
-            // </svg>
             <img
               className="user_avatar"
               src="https://icons.iconarchive.com/icons/graphicloads/100-flat/128/student-icon.png"
             />
           )}
         </div>
-        <div className="message">{message.message}</div>
+        <div className="message px-2">{message.message}</div>
       </div>
     </div>
   );

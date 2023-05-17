@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
   display: flex;
   background-color: #282c34;
@@ -8,9 +8,9 @@
   bottom: 0;
   right: 0;
   left: 0;
-}
+} */
 
-.sidemenu {
+/* .sidemenu {
   width: 12em;
   padding: 1rem;
   background-color: #202123;
@@ -21,15 +21,15 @@
     width: 0 !important;
     padding: 0 !important;
   }
-}
+} */
 
-.chatbox {
+/* .chatbox {
   flex: 1;
   background-color: #343541;
   position: relative;
-}
+} */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -38,17 +38,20 @@
   justify-content: center;
   font-size: calc(1em + 2vmin);
   color: white;
-}
+} */
 
-.chat-input-holder {
+/* .chat-input-holder {
   padding: 2rem;
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
-}
+} */
 
-.chat-input-textarea {
+ /* .chat-input-textarea {
+    width: 90%;
+ } */
+/* .chat-input-textarea {
   background-color: #40414f;
   width: 90%;
   padding: 1.5rem;
@@ -59,37 +62,40 @@
   font-size: 1.25em;
   color: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-}
+} */
 
-.chat-log {
+/* .chat-log {
   padding: 1.5em;
   text-align: left;
   overflow-y: auto !important;
   height: 80% !important;
-}
+} */
 
-.chat-message.chatgpt {
+/* .chat-log{
+  height: 80% !important;
+} */
+
+/* .chat-message.chatgpt {
   background-color: rgba(255, 255, 255, 0.1);
-}
+} */
 
-.chat-message-center {
-  /* max-width: 640px; */
+/* .chat-message-center {
   margin-left: auto;
   margin-right: auto;
   display: flex;
   padding: 1.25em;
   padding-left: 1.25em;
   padding-right: 1.25em;
-}
+} */
 
-.avatar {
+/* .avatar {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   width: 2.5em;
   height: 2.5em;
-}
+} */
 
-.avatar.chatgpt {
+/* .avatar.chatgpt {
   background: #0da37f !important;
   border-radius: 50%;
   width: 2.5em;
@@ -104,4 +110,4 @@
 .user_avatar {
   width: 2.55em;
   height: 2.55em;
-}
+} */
